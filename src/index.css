@@ -1,5 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+
+:root {
+  --header-bg: url(./images/bg-desktop-dark.jpg);
+
+  /* colors */
+
+  --font: white;
+  --one: hsl(235, 21%, 11%);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Shrikhand', cursive;
+  color: var(--font);
 }

@@ -1,7 +1,17 @@
+import icon_sun from "./images/icon-sun.svg";
+import "./style/app.css";
+
 function App() {
   return (
     <div className="app">
-      <h1>Hello, There!</h1>
+      <header>
+        <p>
+          <span>TODO</span>
+          <span>
+            <img src={icon_sun} />
+          </span>
+        </p>
+      </header>
     </div>
   );
 }
