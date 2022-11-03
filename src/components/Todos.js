@@ -1,56 +1,41 @@
 import "../style/todos.css";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const Todos = () => {
-  const [todos, setTodos] = useState([
-    {
-      id: 0,
-      text: "Jog around the park",
-      isChecked: false,
-    },
-    {
-      id: 1,
-      text: "10 minutes meditation",
-      isChecked: false,
-    },
-    {
-      id: 2,
-      text: "Read for 1 hour",
-      isChecked: false,
-    },
-  ]);
+const Todos = (props) => {
 
   const handleCheck = (e) => {
     e.target.className = "checked";
+    const text = e.target.innerText;
+
+    for (let i = 0; i < props.todos.length; i++) {
+      if (props.todos[i].text == text) {
+        props.todos[i].isChecked = true;
+        console.log(props.todos[i].id);
+      }
+    }
   };
 
-  const addTodo = (e) => {
-    if (e.key === "Enter") {
-      const x = todos;
-      x.push({
-        id: todos[todos.length - 1].id + 1,
-        text: e.target.value,
-        isChecked: false,
-      });
-      setTodos(x);
-    }
+  const clickHandler = (event) => {
+    props.addTodo(event);
   };
 
   return (
     <div className="todos">
-      <input type="text" onKeyDown={(event) => addTodo(event)} />
-      <ul onClick={(event) => handleCheck(event)} ref={ul}>
-        {mapData()}
+      <input type="text" onKeyDown={(event) => clickHandler(event)} />
+      <ul onClick={(event) => handleCheck(event)}>
+        {props.todos.map((todo) => (
+          <li key={todo.id}>{todo.text}</li>
+        ))}
       </ul>
       <div className="footer">
-        <span className="items">5 items left</span>
+        <span className="items filter-btn">{props.todos.length} items</span>
         <p className="filter">
-          <span>All</span>
-          <span>Active</span>
-          <span>Completed</span>
+          <span className="filter-btn">All</span>
+          <span className="filter-btn">Active</span>
+          <span className="filter-btn">Completed</span>
         </p>
-        <span className="clear">Clear Compleated</span>
+        <span className="clear filter-btn">Clear Compleated</span>
       </div>
     </div>
   );

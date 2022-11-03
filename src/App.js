@@ -24,6 +24,31 @@ function App() {
     }
   }, [isDark]);
 
+  // todos
+
+  const [todos, setTodos] = useState([
+    {
+      id: 0,
+      text: "An exampler todo",
+      isChecked: false,
+    },
+  ]);
+
+  const addTodo = (e) => {
+    if (e.key === "Enter") {
+      setTodos([
+        ...todos,
+        {
+          id: todos[todos.length - 1].id + 1,
+          text: e.target.value,
+          isChecked: false,
+        },
+      ]);
+      console.log(todos);
+      e.target.value = "";
+    }
+  };
+
   return (
     <div className="app">
       <header
@@ -47,7 +72,7 @@ function App() {
         </p>
       </header>
 
-      <Todos />
+      <Todos todos={todos} addTodo={addTodo} />
     </div>
   );
 }
