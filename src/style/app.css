@@ -2,10 +2,11 @@
   width: 100vw;
   height: 100vh;
   background-color: var(--one);
+  position: relative;
 }
 
 header {
-  background-image: var(--header-bg);
+  /* background-image: var(--header-bg); */
   height: 45%;
   font-size: 40px;
   letter-spacing: 20px;
@@ -19,4 +20,8 @@ header > p {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+header > p > span {
+  color: var(--header-font);
 }

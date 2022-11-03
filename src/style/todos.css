@@ -1,0 +1,61 @@
+.todos {
+  position: absolute;
+  width: 100%;
+  top: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 200;
+  font-size: 18px;
+}
+
+.todos > input,
+.todos > ul,
+.todos > div {
+  background-color: var(--two);
+  width: 50%;
+}
+
+.todos > input,
+.todos > ul > li,
+.todos > div {
+  height: 50px;
+}
+
+.todos > input {
+  border: none;
+  margin: 10px;
+  padding: 20px;
+}
+
+.todos > ul {
+  list-style-type: none;
+}
+
+.todos > ul > li {
+  border-bottom: 1px solid var(--font);
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.todos > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.filter {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+}
+
+.footer {
+  font-size: 15px;
+}
+
+.checked {
+  opacity: 0.5;
+  text-decoration: line-through;
+}

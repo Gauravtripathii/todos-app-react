@@ -1,12 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Shrikhand&display=swap');
 
 :root {
   --header-bg: url(./images/bg-desktop-dark.jpg);
+  /* --header-bg: url(./images/bg-desktop-light.jpg); */
 
   /* colors */
 
   --font: white;
+  /* --font: black; */
+  --header-font: black;
+  /* --header-font: white; */
   --one: hsl(235, 21%, 11%);
+  /* --one: rgb(236, 236, 236); */
+  --two: hsl(235, 24%, 19%);
+  /* --two: white; */
 }
 
 * {
