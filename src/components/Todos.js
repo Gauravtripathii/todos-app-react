@@ -1,7 +1,5 @@
 import "../style/todos.css";
 
-import { useState, useEffect } from "react";
-
 const Todos = (props) => {
 
   const handleCheck = (e) => {
