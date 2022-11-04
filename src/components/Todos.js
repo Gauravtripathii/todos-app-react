@@ -7,7 +7,7 @@ const Todos = (props) => {
     const text = e.target.innerText;
 
     for (let i = 0; i < props.todos.length; i++) {
-      if (props.todos[i].text == text) {
+      if (props.todos[i].text === text) {
         props.todos[i].isChecked = true;
         console.log(props.todos[i].id);
       }
